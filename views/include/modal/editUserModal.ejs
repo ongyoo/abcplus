@@ -1,0 +1,59 @@
+<!-- Modal Dialogs ====================================================================================================================== -->
+<!-- Default Size -->
+<div class="modal fade" id="editUserModal" tabindex="-1" role="dialog">
+ <form id="sign_up" method="POST">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="defaultModalLabel">ข้อมูลสมาชิก/แก้ไขข้อมูล</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">ชื่อ :</i>
+                    </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" id="input_firstname" name="input_firstname" placeholder="ชื่อ" required autofocus>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">นามสกุล :</i>
+                    </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" id="input_lastname" name="input_lastname" placeholder="นามสกุล" required autofocus>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">อีเมล :</i>
+                    </span>
+                    <div class="form-line">
+                        <input type="email" class="form-control" id="input_email_edit" name="input_email_edit" placeholder="อีเมล" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">เบอร์ติดต่อ :</i>
+                    </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" id="input_tel" name="input_tel" placeholder="เบอร์ติดต่อ" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">ตำแหน่ง :</i>
+                    </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" id="input_role" name="input_role" placeholder="ตำแหน่ง" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" onclick="saveUpdateUserInfo();">บันทึก</button>
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">ยกเลิก</button>
+            </div>
+        </div>
+    </div>
+</form>
+</div>

@@ -1,0 +1,79 @@
+/*
+note lib
+ send email : https://nodemailer.com/about/
+ 
+*/
+
+/* npm น่าสน
+	https://www.npmjs.com/package/dropbox-v2-api
+	https://github.com/jaredhanson/passport-facebook
+	https://github.com/jaredhanson/passport-local
+	https://github.com/jaredhanson/passport-facebook
+	https://github.com/marcbachmann/node-html-pdf
+	https://blog.risingstack.com/node-hero-node-js-authentication-passport-js/
+
+*/
+
+select image.image_like, image.image_id from image where image.image_id = '5e5c1922-0524-6910-22a9-79b5a6aedee3' AND image.image_like IN ('{c2245eab-2e66-87d8-8ced-5daef03b9623}');
+
+
+
+select sum(image.image_like::int) image.image_like, image.image_like, image.image_id from image where image.image_id = '5e5c1922-0524-6910-22a9-79b5a6aedee3' AND image.image_like IN ('{c2245eab-2e66-87d8-8ced-5daef03b9623}');
+
+
+SELECT CASE WHEN myfield~E'^\\d+$' THEN myfield::integer ELSE 0 END FROM mytable;
+
+
+select sum(image.image_like::int) image.image_like, image.image_like, image.image_id from image where image.image_id = '5e5c1922-0524-6910-22a9-79b5a6aedee3' AND image.image_like IN ('{c2245eab-2e66-87d8-8ced-5daef03b9623}');
+
+
+//image.image_like, image.image_id
+
+select case (select count(image.image_like) from image where image.image_id = '5e5c1922-0524-6910-22a9-79b5a6aedee3' AND image.image_like IN ('{c2245eab-2e66-87d8-8ced-5daef03b9623}')) when 0 then false else true end;
+
+
+
+select image.image_like, image.image_like, image.image_id case (select count(image.image_like) from image where image.image_id = '5e5c1922-0524-6910-22a9-79b5a6aedee3' AND image.image_like IN ('{c2245eab-2e66-87d8-8ced-5daef03b9623}')) when 0 then false else true end;
+
+select case (select count(image.image_like) from image where image.image_id = '5e5c1922-0524-6910-22a9-79b5a6aedee3' AND image.image_like IN ('{c2245eab-2e66-87d8-8ced-5daef03b9623}')) when 0 then false else true end;
+
+
+//check like
+select case (select count(image.image_like) from image where image.image_id = '5e5c1922-0524-6910-22a9-79b5a6aedee3' AND image.image_like IN ('{c2245eab-2e66-87d8-8ced-5daef03b9623}')) when 0 then false else true end as is_like;
+
+
+
+select case (select count(image.image_like) from image where image.image_id = '5e5c1922-0524-6910-22a9-79b5a6aedee3' AND image.image_like IN ('{c2245eab-2e66-87d8-8ced-5daef03b9623}')) when 0 then false else true end as is_like
+
+
+SELECT image_feed.user_id, image_feed.image_approved, image_feed.image_is_active, image_feed.image_feed_id, image_feed.image_timestamp, image_feed.image_id, 
+image.user_id, image.image_approved, image.image_is_active, image.image_thumbnail_url, image.image_count_viewer, image.image_create_date, image.image_des, image.image_muti_url,
+ public.user.user_first_name, public.user.user_last_name, public.user.user_email, public.user.user_profile_image_url
+  FROM public.image_feed FULL OUTER JOIN public.image ON image_feed.image_id = image.image_id
+    JOIN public.user ON image.user_id = public.user.user_id ORDER BY RANDOM();
+
+
+
+    SELECT image_feed.user_id
+,image_feed.image_approved
+,image_feed.image_is_active
+,image_feed.image_feed_id
+,image_feed.image_timestamp
+,image_feed.image_id
+,(case when public.user.user_id = any (image.image_like) then true else false end) as is_like
+,image.image_like
+,image.user_id
+,image.image_approved
+,image.image_is_active
+,image.image_thumbnail_url
+,image.image_count_viewer
+,image.image_create_date
+,image.image_des
+,image.image_muti_url
+,public.user.user_first_name
+,public.user.user_last_name
+,public.user.user_email
+,public.user.user_profile_image_url
+FROM public.image_feed 
+FULL OUTER JOIN public.image ON image_feed.image_id = image.image_id
+JOIN public.user ON image.user_id = public.user.user_id ORDER BY RANDOM();
